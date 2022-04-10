@@ -55,6 +55,7 @@ print(paste("Rataan :", miu))
 varian <- (1-p)/ p^2
 print(paste("varian adalah:", varian))
 ```
+>Kita dapat menghitung nilai miu dan varian dengan data yang didapatkan
 
 ## soal 2
 Terdapat 20 pasien menderita Covid19 dengan peluang sembuh sebesar 0.2. Tentukan :
@@ -120,6 +121,7 @@ mean <- 4.5
 varian <- 4.5
 print(paste("mean : ", mean, "dan varian : ", varian))
 ```
+>kita mendapatkan nilai mean dan varian sama
 
 ## 4
 Diketahui nilai x = 2 dan v = 10. Tentukan:
@@ -128,6 +130,7 @@ Fungsi Probabilitas dari Distribusi Chi-Square
 ``` R
 dchisq(x, v)
 ```
+>Dapat menggunakan fungsi bawaan r untuk mengcari chi square density for a vector of elements
 
 ### b
 Histogram dari Distribusi Chi-Square dengan 100 data random
@@ -135,6 +138,7 @@ Histogram dari Distribusi Chi-Square dengan 100 data random
 output = rchisq(100, v)
 hist(output)
 ```
+>kita masukkan output ke dalam fungsi histogram
 
 ### c
 Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Chi-Square
@@ -143,6 +147,7 @@ rataan <- v
 varian <- 2 * v
 print(paste("rataan : ", rataan, "dan varian : ", varian))
 ```
+>Memakai rataan yaitu v dan varian yaitu 2 * v
 
 ## 5
 ### a
@@ -151,6 +156,7 @@ Fungsi Probabilitas dari Distribusi Exponensial
 lambda = 3
 dexp(lambda)
 ```
+>kita dapat memakai fungsi bawaan R untuk probability density for value x
 
 ### b
 Histogram dari Distribusi Exponensial untuk 10, 100, 1000 dan 10000 bilangan random
@@ -167,6 +173,7 @@ hist(rexp(1000))
 set.seed(1)
 hist(rexp(10000))
 ```
+>kita set kan seed(1), lalu kita masukkan ke fungsi histogram dengan nilai yang diminta
 
 ### c
 Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Exponensial untuk n = 100 dan λ = 3
@@ -175,6 +182,7 @@ rataan = lambda
 varian = lambda*lambda
 print(paste("rataan:", rataan, "dan varian:", varian))
 ```
+>rataan merupakan lambda dengan varian yaitu rataan * rataan
 
 ## Soal 6
 Diketahui generate random nilai sebanyak 100 data, mean = 50, sd = 8. Tentukan
@@ -182,16 +190,39 @@ Diketahui generate random nilai sebanyak 100 data, mean = 50, sd = 8. Tentukan
 Fungsi Probabilitas dari Distribusi Normal P(X1 ≤ x ≤ X2), hitung Z-Score Nya dan plot
 data generate randomnya dalam bentuk grafik.
 ``` R
-
+n <- 100
+mean <- 50
+sd <- 8
+#set.seed(1)
+nums<-rnorm(n,mean,sd)
+X1=-2147483647
+X2=2147483647
+z_scores <- (nums-mean(nums))/sd(nums)
+rata_rata=mean(nums)
+for(i in 1:n){
+  #Cari nilai X1 & X2
+  if(nums[i]>X1 && nums[i]<rata_rata)X1=nums[i]
+  if(nums[i]<X2 && nums[i]>rata_rata)X2=nums[i]
+}
+P_ans=pnorm(X2,mean(nums),sd(nums),lower.tail=TRUE)-pnorm(X1,mean(nums),sd(nums),lower.tail=TRUE)
+cat("Peluang dari",X1,"< x <",X2,"adalah:",P_ans)
+plot(nums,z_scores,ylab="Z-score",xlab="Data Nilai")
 ```
+>sesuai petunjuk, kita dapat menggunakan fungsi plot untuk memplotkan data ke dalam grafik
+
 ### b
 Generate Histogram dari Distribusi Normal dengan breaks 50 dan format penamaan:
 NRP_Nama_Probstat_{Nama Kelas}_DNhistogram
 ``` R
-
+nums=rnorm(100,50,8)
+hist(nums,breaks=50,main="5025201220_Davian Benito_Probstat_E_DNHistogram")
 ```
+>kita dapat menggunakan rnorm untuk mendapatkan distribusi peluang lalu kita masukkan ke fungsi histogram
+
 ### c
 Nilai Varian (σ²) dari hasil generate random nilai Distribusi Normal
 ``` R
-
+varian = 8*8
+print(paste("varian adalah", varian))
 ```
+>varian didapatkan dari perkalian sd * sd
