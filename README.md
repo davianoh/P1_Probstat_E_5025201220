@@ -3,7 +3,7 @@
 Nama : Davian Benito
 Nrp : 5025201220
 
-## Soal1
+## Soal 1
 Seorang penyurvei secara acak memilih orang-orang di jalan sampai dia bertemu dengan
 seseorang yang menghadiri acara vaksinasi sebelumnya
 ### a
@@ -57,7 +57,7 @@ print(paste("varian adalah:", varian))
 ```
 >Kita dapat menghitung nilai miu dan varian dengan data yang didapatkan
 
-## soal 2
+## Soal 2
 Terdapat 20 pasien menderita Covid19 dengan peluang sembuh sebesar 0.2. Tentukan :
 ### a
 Peluang terdapat 4 pasien yang sembuh.
@@ -87,7 +87,7 @@ cat("2C. Rataan :", rataan,"dan varian :", varian,"\n")
 ```
 >Rataan adalah jumlah pasien * peluang sukses, sedangkan varian adalah jumlah pasien * peluang sukses * peluang gagal
 
-## 3
+## Soal 3
 Diketahui data dari sebuah tempat bersalin di rumah sakit tertentu menunjukkan rata-rata historis
 4,5 bayi lahir di rumah sakit ini setiap hari. (gunakan Distribusi Poisson)
 ### a
@@ -123,7 +123,7 @@ print(paste("mean : ", mean, "dan varian : ", varian))
 ```
 >kita mendapatkan nilai mean dan varian sama
 
-## 4
+## Soal 4
 Diketahui nilai x = 2 dan v = 10. Tentukan:
 ### a
 Fungsi Probabilitas dari Distribusi Chi-Square
@@ -149,7 +149,7 @@ print(paste("rataan : ", rataan, "dan varian : ", varian))
 ```
 >Memakai rataan yaitu v dan varian yaitu 2 * v
 
-## 5
+## Soal 5
 ### a
 Fungsi Probabilitas dari Distribusi Exponensial
 ``` R
